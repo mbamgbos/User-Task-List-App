@@ -3,13 +3,15 @@
 one:
   title: MyString
   description: MyText
-  priority: 
-  due_date: 2015-11-04
+  priority: 1
+  due_date: 2015-11-06
   is_completed_toggle: false
+  task_list_id: 
 
 two:
   title: MyString
   description: MyText
-  priority: 
-  due_date: 2015-11-04
+  priority: 1
+  due_date: 2015-11-06
   is_completed_toggle: false
+  task_list_id: 

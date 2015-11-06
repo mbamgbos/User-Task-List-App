@@ -1,4 +1,4 @@
 json.array!(@task_lists) do |task_list|
-  json.extract! task_list, :id
+  json.extract! task_list, :id, :name, :description
   json.url task_list_url(task_list, format: :json)
 end

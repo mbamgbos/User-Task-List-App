@@ -1,0 +1,18 @@
+<header>
+	<h1>Todo Listorama</h1>
+</header>
+
+<div id="sidebar">
+	<h2>Task List</h2>
+		<ul>
+			<% @all_task_lists.each do | task_list | %>
+				<li><%= link_to task_list.name, task_list %></li>
+			<% end %>
+		</ul>
+	<p>Add a new Task</p>
+
+</div>
+
+<footer>
+	<p>copyright 2015| MGTI</p>
+</footer>

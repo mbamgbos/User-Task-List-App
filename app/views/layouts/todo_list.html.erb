@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Taskmanager</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
 <header>
 	<h1>Todo Listorama</h1>
 </header>
@@ -9,10 +19,17 @@
 				<li><%= link_to task_list.name, task_list %></li>
 			<% end %>
 		</ul>
-	<p>Add a new Task</p>
+	<%= link_to 'New Task list', new_task_list_path %>
 
 </div>
+
+<%= yield %>
 
 <footer>
 	<p>copyright 2015| MGTI</p>
 </footer>
+
+
+
+</body>
+</html>

@@ -35,6 +35,10 @@
     <%= f.label :task_list_id %><br>
     <%= f.collection_select :task_list_id, TaskList.all, :id, :name, prompt:"Please select a list..." %>
   </div>
+  <div class="field">
+    <%= f.label :username %><br>
+    <%= f.collection_select :username, User.all, :user_id, :first_name, :last_name, prompt:"No users assigned..." %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

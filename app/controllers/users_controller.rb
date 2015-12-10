@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < ProtectedController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -76,11 +76,6 @@ class UsersController < ApplicationController
  
 
   
-  def require_login
-    unless session[:user_id]
-      flash[:message] = "You must be logged in to view that page"
-      redirect_to login_path
-    end
-  end
+  
   
 end

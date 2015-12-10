@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
-  get 'login/index'
 
-  get 'login/authenticate'
+get 'login' => 'login#index', as: :login
 
-  get 'login/logout'
+post 'login' => 'login#authenticate', as: :authenticate
 
-  get 'home/index'
+get 'logout' => 'login#logout', as: :logout
+
+get '/' => 'home#index', as: :home
+
+root 'home#index'
 
   resources :users
 

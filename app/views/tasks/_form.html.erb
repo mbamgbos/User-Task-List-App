@@ -37,7 +37,7 @@
   </div>
   <div class="field">
     <%= f.label :username %><br>
-    <%= f.collection_select :username, User.all, :user_id, :first_name, :last_name, prompt:"No users assigned..." %>
+    <%= f.collection_select :user_id, User.all, :id, :username, prompt:"No users assigned..." %>
   </div>
   <div class="actions">
     <%= f.submit %>

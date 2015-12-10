@@ -10,7 +10,14 @@
 
 <header>
 	<h1>Todo Listorama</h1>
-</header>
+</header
+
+<div id="primary">
+  <% if flash[:message] %>
+    <p class="flash-message"><%= flash[:message] %></p>
+  <% end %>
+  <%= yield %>
+</div>
 
 <div id="sidebar">
 	<h2>Task List</h2>
@@ -19,11 +26,16 @@
 				<li><%= link_to task_list.name, task_list %></li>
 			<% end %>
 		</ul>
-	<%= link_to 'New Task list', new_task_list_path %>
+	<%= link_to 'New Task list', new_task_list_path %> <br>
+	
+	<% if session[:user_id] %>
+		<%= link_to 'Logout', logout_path %>
+	<% else %>
+		<%= link_to 'Login', login_path %>
+	<% end %>
 
 </div>
 
-<%= yield %>
 
 <footer>
 	<p>copyright 2015| MGTI</p>

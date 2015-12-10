@@ -71,4 +71,16 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:first_name, :last_name, :username, :password)
     end
+	
+	before_action :require_login, except: [:index, :show]
+ 
+
+  
+  def require_login
+    unless session[:user_id]
+      flash[:message] = "You must be logged in to view that page"
+      redirect_to login_path
+    end
+  end
+  
 end
